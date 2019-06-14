@@ -1,5 +1,25 @@
-define SQL_ID=&1
-define STATUS=EXECUTING
+
+prompt
+prompt =====================================
+prompt
+
+
+column P_USER new_value 1 format A10
+column P_SQL_ID new_value 2 format A10
+column P_STATUS new_value 3 format A10
+
+select null P_USER, null P_SQL_ID, null P_STATUS from dual where 1=2;
+select nvl( '&1','&_USER') P_USER, nvl('&2','%') P_SQL_ID, nvl('&3','EXECUTING') P_STATUS from dual ;
+
+
+define USERNAME=&1
+define SQL_ID=&2     
+define STATUS=&3
+
+undefine 1
+undefine 2
+undefine 3
+
  
 prompt
 prompt
